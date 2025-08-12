@@ -14,11 +14,11 @@ export default function ColorLabsWebsite() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? 5 : prev - 1))
+    setCurrentSlide((prev) => (prev === 0 ? 6 : prev - 1))
   }
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === 5 ? 0 : prev + 1))
+    setCurrentSlide((prev) => (prev === 6 ? 0 : prev + 1))
   }
 
   return (
@@ -156,7 +156,7 @@ export default function ColorLabsWebsite() {
                 </p>
                 <div className="flex items-center gap-4 color-wheel-gradient-text">
                   <MapPin className="w-6 h-6" />
-                  <span className="font-semibold">Proudly located in Atlanta, GA. Shipping everywhere ✈️                       </span>
+                  <span className="font-semibold">Proudly located in Atlanta, GA. Shipping everywhere ✈️ </span>
                 </div>
               </div>
             </div>
@@ -386,7 +386,8 @@ export default function ColorLabsWebsite() {
                     </div>
                     <div className="p-4">
                       <p className="text-sm text-gray-600">
-                        Multi-color brand work • Soft-hand prints • Professional color matching
+                        Front-side angel artwork from the Caleb Colossus Lab Session concert • Created in commemoration
+                        of his hit song "Sinnerman"
                       </p>
                     </div>
                   </div>
@@ -404,7 +405,8 @@ export default function ColorLabsWebsite() {
                     </div>
                     <div className="p-4">
                       <p className="text-sm text-gray-600">
-                        Intricate line art • Script lettering • Multi-color coordination
+                        Angel artwork from Caleb Colossus's Lab Session concert • Created in commemoration of his hit
+                        song "Sinnerman"
                       </p>
                     </div>
                   </div>
@@ -421,9 +423,7 @@ export default function ColorLabsWebsite() {
                       />
                     </div>
                     <div className="p-4">
-                      <p className="text-sm text-gray-600">
-                        Lifestyle styling • Brand photography • Instagram-ready presentation
-                      </p>
+                      <p className="text-sm text-gray-600">{"The prints on set of Colossus's Lab Session Concert."}</p>
                     </div>
                   </div>
                 </div>
@@ -440,7 +440,7 @@ export default function ColorLabsWebsite() {
                     </div>
                     <div className="p-4">
                       <p className="text-sm text-gray-600">
-                        Complex celestial artwork • Detailed line work • Mystical text integration
+                        {"We print with Love to bring your intricate Vision to reality. Every. Single. Time. WE PRINT."}
                       </p>
                     </div>
                   </div>
@@ -458,7 +458,7 @@ export default function ColorLabsWebsite() {
                     </div>
                     <div className="p-4">
                       <p className="text-sm text-gray-600">
-                        Corporate uniforms • Safety apparel • Professional business branding
+                        Corporate uniforms for a local company: 1 Major Construction.
                       </p>
                     </div>
                   </div>
@@ -468,15 +468,33 @@ export default function ColorLabsWebsite() {
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div className="aspect-square relative">
                       <Image
-                        src="/styled-loss-shirts.jpg"
-                        alt="Styled flat lay of LOSS branded shirts in multiple colors with floral arrangement"
+                        src="/vinyl-construction-sticker.jpg"
+                        alt="Clear vinyl sticker for 1Major Construction Inc with professional branding and contact information"
                         fill
                         className="object-cover"
                       />
                     </div>
                     <div className="p-4">
                       <p className="text-sm text-gray-600">
-                        Lifestyle brand photography • Multi-color coordination • Instagram-ready styling
+                        Professional vinyl cutting • Business branding • Clear decal application
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="min-w-full md:min-w-1/2 lg:min-w-1/3 px-2">
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div className="aspect-square relative">
+                      <Image
+                        src="/camo-wireframe-updated.jpg"
+                        alt="Camo shirt with pink wireframe crocodile design being screen printed on press"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-sm text-gray-600">
+                        Specialty fabric printing • Wireframe graphics • Technical precision work
                       </p>
                     </div>
                   </div>
@@ -498,9 +516,8 @@ export default function ColorLabsWebsite() {
               <ChevronRight className="w-5 h-5 text-gray-600 group-hover:color-wheel-gradient-text" />
             </button>
 
-            {/* Dots indicator */}
             <div className="flex justify-center mt-6 space-x-2">
-              {[0, 1, 2, 3, 4, 5].map((index) => (
+              {[0, 1, 2, 3, 4, 5, 6].map((index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
