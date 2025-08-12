@@ -26,7 +26,10 @@ export default function ColorLabsWebsite() {
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Color Labs USA</h1>
+          <div className="flex flex-col items-center mb-6">
+            <Image src="/color-labs-logo.png" alt="Color Labs USA Logo" width={120} height={120} className="mb-4" />
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">Color Labs USA</h1>
+          </div>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
             Welcome to Color Labs USA: your new home for screen printing - Because Your Vision is Louder in Color.
           </p>
@@ -117,19 +120,183 @@ export default function ColorLabsWebsite() {
       {/* About Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8">Who We Are</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Color Labs is an Atlanta screen‑printing studio focused on clean design, soft‑hand prints, and reliable
-              delivery. From band tees and event merch to uniforms and brand drops, we help you look official—without
-              the headache.
-            </p>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-12">Who We Are</h2>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iStock-986939714.jpg-c6rWVhXWhscBSoDobQqTg3Zs9hCI6e.jpeg"
+                  alt="Vibrant screen printing inks being mixed on squeegees showing bright green, yellow, orange and red colors"
+                  width={600}
+                  height={400}
+                  className="rounded-lg shadow-lg object-cover w-full h-80"
+                />
+              </div>
+              <div className="space-y-6">
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Color Labs is an Atlanta screen‑printing studio focused on clean design, soft‑hand prints, and
+                  reliable delivery. From band tees and event merch to uniforms and brand drops, we help you look
+                  official—without the headache.
+                </p>
+                <div className="flex items-center gap-4 text-orange-600">
+                  <MapPin className="w-6 h-6" />
+                  <span className="font-semibold">Proudly serving Atlanta, GA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">With our Process: We Take the Stress Out of Merch.</h2>
+          <div className="space-y-16 max-w-6xl mx-auto">
+            {/* Step 1 */}
+            <Card className="overflow-hidden shadow-lg">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="relative h-64 lg:h-auto">
+                  <Image
+                    src="/brand-design-process.jpg"
+                    alt="Designer reviewing brand identity materials and logo concepts at desk"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardContent className="p-8 flex flex-col justify-center">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                      1
+                    </div>
+                    <h3 className="text-2xl font-bold">Share Your Vision</h3>
+                  </div>
+                  <div className="space-y-4 text-gray-600">
+                    <p className="leading-relaxed">
+                      Bring us your artwork, idea, or even a rough sketch — we'll refine it until it's print-ready and
+                      aligned with your brand.
+                    </p>
+                    <p className="leading-relaxed">
+                      We handle full artwork procurement and welcome clients to our studio to talk through projects.
+                    </p>
+                    <p className="leading-relaxed font-medium text-orange-600">
+                      This isn't "just a shirt" — it's your art, your message, your moment: and we're here to be
+                      hands-on, creative partners from day one.
+                    </p>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+
+            {/* Step 2 */}
+            <Card className="overflow-hidden shadow-lg">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="relative h-64 lg:h-auto lg:order-2">
+                  <Image
+                    src="/colorful-shirts-rack.jpg"
+                    alt="Variety of blank t-shirts, hoodies and garments in different colors displayed"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardContent className="p-8 flex flex-col justify-center lg:order-1">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                      2
+                    </div>
+                    <h3 className="text-2xl font-bold">Choose Your Canvas</h3>
+                  </div>
+                  <div className="space-y-4 text-gray-600">
+                    <p className="leading-relaxed">
+                      From tees and hoodies to hats, totes, and specialty pieces — we'll guide you to the best garment
+                      and color options for your design.
+                    </p>
+                    <p className="leading-relaxed">
+                      Fabric feel, fit, and durability matter as much as the print, so we source only from trusted
+                      suppliers.
+                    </p>
+                    <p className="leading-relaxed font-medium text-orange-600">
+                      Want to see and compare? Visit our studio to explore samples and choose a canvas that makes your
+                      vision both look and feel amazing.
+                    </p>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+
+            {/* Step 3 */}
+            <Card className="overflow-hidden shadow-lg">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="relative h-64 lg:h-auto">
+                  <Image
+                    src="/screen-printing-process.jpg"
+                    alt="Experienced screen printer using squeegee on printing press with vibrant inks"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardContent className="p-8 flex flex-col justify-center">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                      3
+                    </div>
+                    <h3 className="text-2xl font-bold">We Print With Precision</h3>
+                  </div>
+                  <div className="space-y-4 text-gray-600">
+                    <p className="leading-relaxed">
+                      Once your design is locked in, our lead screen printer — with nearly 30 years of experience and a
+                      reputation as one of the best in the city — uses premium inks and expert techniques.
+                    </p>
+                    <p className="leading-relaxed">
+                      We create vivid, long-lasting prints with every piece inspected for quality.
+                    </p>
+                    <p className="leading-relaxed font-medium text-orange-600">
+                      What leaves our shop is something you'll be proud to wear and share.
+                    </p>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+
+            {/* Step 4 */}
+            <Card className="overflow-hidden shadow-lg">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="relative h-64 lg:h-auto lg:order-2">
+                  <Image
+                    src="/happy-delivery-person.jpg"
+                    alt="Smiling delivery person carrying a large package, representing reliable order delivery"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardContent className="p-8 flex flex-col justify-center lg:order-1">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                      4
+                    </div>
+                    <h3 className="text-2xl font-bold">Delivery Day</h3>
+                  </div>
+                  <div className="space-y-4 text-gray-600">
+                    <p className="leading-relaxed">
+                      Your order arrives on time, neatly packed, and ready to go. No stress — just merch that looks
+                      great, feels great, and makes an impact.
+                    </p>
+                    <p className="leading-relaxed">
+                      From the moment you open the box, you'll see the quality and care we put into every order.
+                    </p>
+                    <p className="leading-relaxed font-medium text-orange-600">
+                      Local customers are welcome to save on shipping costs by picking orders up from the Lab!
+                    </p>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12">What We Do</h2>
@@ -158,39 +325,6 @@ export default function ColorLabsWebsite() {
                   <p className="text-lg">Fulfillment Support (by request)</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">How It Works</h2>
-          <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                1
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Send your art & quantities</h3>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                2
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Approve your mockup & quote</h3>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                3
-              </div>
-              <h3 className="text-xl font-semibold mb-2">We print with care</h3>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                4
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Pickup or ship to your door</h3>
             </div>
           </div>
         </div>
@@ -348,7 +482,10 @@ export default function ColorLabsWebsite() {
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4">
-            <h3 className="text-2xl font-bold">Color Labs USA — Atlanta, GA</h3>
+            <div className="flex flex-col items-center mb-4">
+              <Image src="/color-labs-logo.png" alt="Color Labs USA Logo" width={60} height={60} className="mb-2" />
+              <h3 className="text-2xl font-bold">Color Labs USA — Atlanta, GA</h3>
+            </div>
             <p className="text-gray-400">Fast, quality screen‑printing for brands, artists, and events.</p>
             <div className="flex justify-center gap-6 pt-4">
               <Link href="#" className="text-gray-400 hover:text-white transition-colors">
