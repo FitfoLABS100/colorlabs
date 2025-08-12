@@ -16,7 +16,7 @@ export default function Error({
         {error?.message || "A client-side error occurred. Try reloading the page."}
       </p>
       <div className="flex gap-3">
-        <Button onClick={() => reset()} className="bg-orange-600 hover:bg-orange-700">
+        <Button onClick={() => reset()} className="logo-gradient-bg text-white font-semibold">
           Try again
         </Button>
         <Button variant="outline" onClick={() => window.location.reload()}>

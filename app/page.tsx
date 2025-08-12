@@ -5,11 +5,22 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
-import { Phone, Clock, Award, MapPin, Upload, Instagram } from "lucide-react"
+import { Phone, Clock, Award, MapPin, Upload, Instagram, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function ColorLabsWebsite() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? 5 : prev - 1))
+  }
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === 5 ? 0 : prev + 1))
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -35,7 +46,7 @@ export default function ColorLabsWebsite() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg">
+            <Button size="lg" className="logo-gradient-bg text-white px-8 py-4 text-lg font-semibold shadow-lg">
               Contact Us Now
             </Button>
             <Button
@@ -48,28 +59,31 @@ export default function ColorLabsWebsite() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm md:text-base opacity-90">
-            <span className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              Fast turnarounds
-            </span>
-            <span className="flex items-center gap-2">
-              <Award className="w-4 h-4" />
-              Pro quality
-            </span>
-            <span className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              Fair pricing
-            </span>
+            <div className="text-center">
+              <Clock className="w-12 h-12 mx-auto mb-4 color-wheel-gradient-text" />
+              <h3 className="text-xl font-semibold mb-2">Fast Turnarounds</h3>
+              <p className="text-gray-600">Rush options available without cutting corners.</p>
+            </div>
+            <div className="text-center">
+              <Award className="w-12 h-12 mx-auto mb-4 color-wheel-gradient-text" />
+              <h3 className="text-xl font-semibold mb-2">Premium Quality</h3>
+              <p className="text-gray-600">Soft prints, accurate color, durable washes.</p>
+            </div>
+            <div className="text-center">
+              <MapPin className="w-12 h-12 mx-auto mb-4 color-wheel-gradient-text" />
+              <h3 className="text-xl font-semibold mb-2">Local & Reliable</h3>
+              <p className="text-gray-600">Atlanta-based, community-minded service.</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Sticky Contact Strip */}
-      <div className="sticky top-0 z-50 bg-orange-600 text-white py-3">
+      <div className="sticky top-0 z-50 logo-gradient-bg text-white py-3">
         <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-semibold">Ready to print?</span>
           <div className="flex gap-3">
-            <Button size="sm" variant="secondary" className="bg-white text-orange-600 hover:bg-gray-100" asChild>
+            <Button size="sm" variant="secondary" className="bg-white/90 text-gray-800 hover:bg-white" asChild>
               <Link href="mailto:Print@ColorLabsUSA.com">
                 <Phone className="w-4 h-4 mr-2" />
                 Email: Print@ColorLabsUSA.com
@@ -78,7 +92,7 @@ export default function ColorLabsWebsite() {
             <Button
               size="sm"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-orange-600 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-gray-800 bg-transparent"
             >
               Start Your Order
             </Button>
@@ -92,7 +106,7 @@ export default function ColorLabsWebsite() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center border-0 shadow-lg">
               <CardContent className="p-8">
-                <Clock className="w-12 h-12 mx-auto mb-4 text-orange-600" />
+                <Clock className="w-12 h-12 mx-auto mb-4 color-wheel-gradient-text" />
                 <h3 className="text-xl font-bold mb-3">Fast Turnarounds</h3>
                 <p className="text-gray-600">Rush options available without cutting corners.</p>
               </CardContent>
@@ -100,7 +114,7 @@ export default function ColorLabsWebsite() {
 
             <Card className="text-center border-0 shadow-lg">
               <CardContent className="p-8">
-                <Award className="w-12 h-12 mx-auto mb-4 text-orange-600" />
+                <Award className="w-12 h-12 mx-auto mb-4 color-wheel-gradient-text" />
                 <h3 className="text-xl font-bold mb-3">Premium Quality</h3>
                 <p className="text-gray-600">Soft prints, accurate color, durable washes.</p>
               </CardContent>
@@ -108,7 +122,7 @@ export default function ColorLabsWebsite() {
 
             <Card className="text-center border-0 shadow-lg">
               <CardContent className="p-8">
-                <MapPin className="w-12 h-12 mx-auto mb-4 text-orange-600" />
+                <MapPin className="w-12 h-12 mx-auto mb-4 color-wheel-gradient-text" />
                 <h3 className="text-xl font-bold mb-3">Local & Reliable</h3>
                 <p className="text-gray-600">Atlanta-based, community-minded service.</p>
               </CardContent>
@@ -134,13 +148,15 @@ export default function ColorLabsWebsite() {
               </div>
               <div className="space-y-6">
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Color Labs is an Atlanta screen‑printing studio focused on clean design, soft‑hand prints, and
-                  reliable delivery. From band tees and event merch to uniforms and brand drops, we help you look
-                  official—without the headache.
+                  We fell in love with merch. With the art of turning a blank canvas into something people want to wear
+                  every day. Years ago, we dove headfirst into apparel design and printing — learning, experimenting,
+                  perfecting. Then we teamed up with the best screen printer in the city. Now, we can deliver the kind
+                  of prints we'd be proud to wear ourselves. Because great merch isn't just seen. It's lived in. Welcome
+                  to Color Labs USA.
                 </p>
-                <div className="flex items-center gap-4 text-orange-600">
+                <div className="flex items-center gap-4 color-wheel-gradient-text">
                   <MapPin className="w-6 h-6" />
-                  <span className="font-semibold">Proudly serving Atlanta, GA</span>
+                  <span className="font-semibold">Proudly located in Atlanta, GA. Shipping everywhere ✈️                       </span>
                 </div>
               </div>
             </div>
@@ -166,7 +182,7 @@ export default function ColorLabsWebsite() {
                 </div>
                 <CardContent className="p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                    <div className="w-12 h-12 logo-gradient-bg text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
                       1
                     </div>
                     <h3 className="text-2xl font-bold">Share Your Vision</h3>
@@ -179,7 +195,7 @@ export default function ColorLabsWebsite() {
                     <p className="leading-relaxed">
                       We handle full artwork procurement and welcome clients to our studio to talk through projects.
                     </p>
-                    <p className="leading-relaxed font-medium text-orange-600">
+                    <p className="leading-relaxed font-medium logo-gradient-text">
                       This isn't "just a shirt" — it's your art, your message, your moment: and we're here to be
                       hands-on, creative partners from day one.
                     </p>
@@ -201,7 +217,7 @@ export default function ColorLabsWebsite() {
                 </div>
                 <CardContent className="p-8 flex flex-col justify-center lg:order-1">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                    <div className="w-12 h-12 logo-gradient-bg text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
                       2
                     </div>
                     <h3 className="text-2xl font-bold">Choose Your Canvas</h3>
@@ -215,7 +231,7 @@ export default function ColorLabsWebsite() {
                       Fabric feel, fit, and durability matter as much as the print, so we source only from trusted
                       suppliers.
                     </p>
-                    <p className="leading-relaxed font-medium text-orange-600">
+                    <p className="leading-relaxed font-medium logo-gradient-text">
                       Want to see and compare? Visit our studio to explore samples and choose a canvas that makes your
                       vision both look and feel amazing.
                     </p>
@@ -237,7 +253,7 @@ export default function ColorLabsWebsite() {
                 </div>
                 <CardContent className="p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                    <div className="w-12 h-12 logo-gradient-bg text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
                       3
                     </div>
                     <h3 className="text-2xl font-bold">We Print With Precision</h3>
@@ -250,7 +266,7 @@ export default function ColorLabsWebsite() {
                     <p className="leading-relaxed">
                       We create vivid, long-lasting prints with every piece inspected for quality.
                     </p>
-                    <p className="leading-relaxed font-medium text-orange-600">
+                    <p className="leading-relaxed font-medium logo-gradient-text">
                       What leaves our shop is something you'll be proud to wear and share.
                     </p>
                   </div>
@@ -271,7 +287,7 @@ export default function ColorLabsWebsite() {
                 </div>
                 <CardContent className="p-8 flex flex-col justify-center lg:order-1">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                    <div className="w-12 h-12 logo-gradient-bg text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
                       4
                     </div>
                     <h3 className="text-2xl font-bold">Delivery Day</h3>
@@ -284,7 +300,7 @@ export default function ColorLabsWebsite() {
                     <p className="leading-relaxed">
                       From the moment you open the box, you'll see the quality and care we put into every order.
                     </p>
-                    <p className="leading-relaxed font-medium text-orange-600">
+                    <p className="leading-relaxed font-medium logo-gradient-text">
                       Local customers are welcome to save on shipping costs by picking orders up from the Lab!
                     </p>
                   </div>
@@ -303,25 +319,25 @@ export default function ColorLabsWebsite() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 logo-gradient-bg rounded-full mt-3 flex-shrink-0"></div>
                   <p className="text-lg">Custom Screen‑Printing (water‑based, plastisol, specialty inks)</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 logo-gradient-bg rounded-full mt-3 flex-shrink-0"></div>
                   <p className="text-lg">Color Matching & Art Prep</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 logo-gradient-bg rounded-full mt-3 flex-shrink-0"></div>
                   <p className="text-lg">Garment Sourcing (tees, hoodies, totes, hats, more)</p>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 logo-gradient-bg rounded-full mt-3 flex-shrink-0"></div>
                   <p className="text-lg">Finishing (tag printing, folding, bagging, size stickers)</p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-3 flex-shrink-0"></div>
+                  <div className="w-2 h-2 logo-gradient-bg rounded-full mt-3 flex-shrink-0"></div>
                   <p className="text-lg">Fulfillment Support (by request)</p>
                 </div>
               </div>
@@ -353,7 +369,11 @@ export default function ColorLabsWebsite() {
 
           <div className="relative max-w-6xl mx-auto">
             <div className="overflow-hidden rounded-lg">
-              <div className="flex transition-transform duration-500 ease-in-out" id="carousel-track">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                id="carousel-track"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
                 <div className="min-w-full md:min-w-1/2 lg:min-w-1/3 px-2">
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div className="aspect-square relative">
@@ -465,35 +485,30 @@ export default function ColorLabsWebsite() {
             </div>
 
             {/* Navigation arrows */}
-            <button className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 group">
-              <svg
-                className="w-5 h-5 text-gray-600 group-hover:text-orange-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-colors group z-10"
+            >
+              <ChevronLeft className="w-5 h-5 text-gray-600 group-hover:color-wheel-gradient-text" />
             </button>
-            <button className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 group">
-              <svg
-                className="w-5 h-5 text-gray-600 group-hover:text-orange-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-colors group z-10"
+            >
+              <ChevronRight className="w-5 h-5 text-gray-600 group-hover:color-wheel-gradient-text" />
             </button>
 
             {/* Dots indicator */}
             <div className="flex justify-center mt-6 space-x-2">
-              <button className="w-3 h-3 rounded-full bg-orange-600"></button>
-              <button className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400"></button>
-              <button className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400"></button>
-              <button className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400"></button>
-              <button className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400"></button>
-              <button className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400"></button>
+              {[0, 1, 2, 3, 4, 5].map((index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    currentSlide === index ? "color-wheel-gradient" : "bg-gray-300"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -546,7 +561,7 @@ export default function ColorLabsWebsite() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-orange-600 text-white">
+      <section className="py-16 logo-gradient-bg text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4">Let's make something you're proud of.</h2>
           <p className="text-xl mb-8 opacity-90">Quick quotes, honest timelines, zero surprises.</p>
@@ -554,14 +569,14 @@ export default function ColorLabsWebsite() {
             <Button
               size="lg"
               variant="secondary"
-              className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 text-lg"
+              className="bg-white/90 text-gray-800 hover:bg-white px-8 py-4 text-lg font-semibold"
             >
               Get a Quote
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 text-lg bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 text-lg bg-transparent"
             >
               Contact Us Now
             </Button>
@@ -612,7 +627,7 @@ export default function ColorLabsWebsite() {
 
                   <div>
                     <Label htmlFor="artwork">Upload Artwork</Label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-orange-600 transition-colors cursor-pointer">
+                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:logo-gradient-border transition-all cursor-pointer">
                       <Upload className="w-8 h-8 mx-auto mb-2 text-gray-400" />
                       <p className="text-gray-600">Click to upload or drag and drop</p>
                     </div>
@@ -627,7 +642,11 @@ export default function ColorLabsWebsite() {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full bg-orange-600 hover:bg-orange-700">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full logo-gradient-bg text-white font-semibold shadow-lg"
+                  >
                     Send Request
                   </Button>
                 </form>
