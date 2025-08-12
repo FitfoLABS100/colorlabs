@@ -330,13 +330,172 @@ export default function ColorLabsWebsite() {
         </div>
       </section>
 
+      {/* How We Bring Your Vision to Life Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-12">How We Bring Your Vision to Life</h2>
+            <div className="grid md:grid-cols-2 gap-6">{/* ... existing code here ... */}</div>
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-8">Trusted By</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Local brands, artists, nonprofits, and events across ATL.
-          </p>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Our Work Speaks Louder</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Real designs, real prints, real impact. See what we've created for local brands, artists, and events
+              across Atlanta.
+            </p>
+          </div>
+
+          <div className="relative max-w-6xl mx-auto">
+            <div className="overflow-hidden rounded-lg">
+              <div className="flex transition-transform duration-500 ease-in-out" id="carousel-track">
+                <div className="min-w-full md:min-w-1/2 lg:min-w-1/3 px-2">
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div className="aspect-square relative">
+                      <Image
+                        src="/loss-shirts-design.jpg"
+                        alt="Multi-color LOSS branded shirts with pink floral designs on drying rack"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-sm text-gray-600">
+                        Multi-color brand work • Soft-hand prints • Professional color matching
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="min-w-full md:min-w-1/2 lg:min-w-1/3 px-2">
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div className="aspect-square relative">
+                      <Image
+                        src="/bird-designs-shirts.jpg"
+                        alt="Detailed bird artwork screen printed on multiple colored t-shirts"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-sm text-gray-600">
+                        Intricate line art • Script lettering • Multi-color coordination
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="min-w-full md:min-w-1/2 lg:min-w-1/3 px-2">
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div className="aspect-square relative">
+                      <Image
+                        src="/styled-floral-shirts.jpg"
+                        alt="Styled flat lay of LOSS branded shirts in multiple colors arranged with colorful flowers"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-sm text-gray-600">
+                        Lifestyle styling • Brand photography • Instagram-ready presentation
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="min-w-full md:min-w-1/2 lg:min-w-1/3 px-2">
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div className="aspect-square relative">
+                      <Image
+                        src="/celestial-design-shirt.jpg"
+                        alt="Black t-shirt with intricate white celestial design featuring moon, grid pattern, and mystical text"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-sm text-gray-600">
+                        Complex celestial artwork • Detailed line work • Mystical text integration
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="min-w-full md:min-w-1/2 lg:min-w-1/3 px-2">
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div className="aspect-square relative">
+                      <Image
+                        src="/corporate-safety-shirts.jpg"
+                        alt="Bright yellow safety shirts for 1Major Construction Inc with black corporate branding and safety messaging"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-sm text-gray-600">
+                        Corporate uniforms • Safety apparel • Professional business branding
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="min-w-full md:min-w-1/2 lg:min-w-1/3 px-2">
+                  <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div className="aspect-square relative">
+                      <Image
+                        src="/styled-loss-shirts.jpg"
+                        alt="Styled flat lay of LOSS branded shirts in multiple colors with floral arrangement"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-sm text-gray-600">
+                        Lifestyle brand photography • Multi-color coordination • Instagram-ready styling
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation arrows */}
+            <button className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 group">
+              <svg
+                className="w-5 h-5 text-gray-600 group-hover:text-orange-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 group">
+              <svg
+                className="w-5 h-5 text-gray-600 group-hover:text-orange-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Dots indicator */}
+            <div className="flex justify-center mt-6 space-x-2">
+              <button className="w-3 h-3 rounded-full bg-orange-600"></button>
+              <button className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400"></button>
+              <button className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400"></button>
+              <button className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400"></button>
+              <button className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400"></button>
+              <button className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400"></button>
+            </div>
+          </div>
         </div>
       </section>
 
